@@ -1,7 +1,7 @@
 import { Icons } from "@/components/icons";
 import { HomeIcon, NotebookIcon } from "lucide-react";
 export const DATA = {
-  name: "Andy Ratoetrarivo",
+  name: "Andy RATOETRARIVO",
   initials: "AR",
   url: "https://andyratoetrarivo.vercel.app",
   location: "Ankorahoatra, Tana 101",
