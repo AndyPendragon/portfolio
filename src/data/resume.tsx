@@ -1,5 +1,17 @@
 import { Icons } from "@/components/icons";
-import { HomeIcon, NotebookIcon } from "lucide-react";
+import {
+  CloudIcon,
+  DatabaseIcon,
+  HomeIcon,
+  LaptopIcon,
+  NotebookIcon,
+  ScaleIcon,
+  ServerIcon,
+  WrenchIcon,
+  GlobeIcon,
+  ShieldIcon,
+} from "lucide-react";
+
 export const DATA = {
   name: "Andy RATOETRARIVO",
   initials: "AR",
@@ -7,24 +19,96 @@ export const DATA = {
   location: "Ankorahoatra, Tana 101",
   locationLink: "https://www.google.com/maps/place/Antananarivo",
   description:
-    "DevSecOps Cloud Engineer passionné par la cybersécurité, les infrastructures cloud et le développement logiciel.",
+    "SecOps Cloud Engineer, axé sur la cybersécurité/cyber-résilience en entreprise, les infrastructures cloud et au coté de développement logiciel.",
   summary:
-    "Étudiant en cybersécurité et ingénierie logicielle, je combine compétences techniques et leadership à travers des projets concrets, des clubs, et des missions pro. Actuellement alternant chez Numer Madagascar, j’ai optimisé l’infrastructure cloud et mis en place des solutions IAM à grande échelle.",
-  avatarUrl: "/me.jpg", // ton image dans /public
+    "Me specialisant en cybersécurité d'entreprise accompagnant l'ingénierie logicielle dans leurs infrastructures. Je combine compétences techniques et aisance relationnel à travers mes missions et activités de clubs. Actuellement alternant chez Numer Madagascar, j’ai optimisé l’infrastructure et les coûts du cloud. Mais aussi une mise en place des solutions sécuritaires de gestion d'identité IAM à grande échelle.",
+  avatarUrl: "/me.jpg",
   skills: [
-    "AWS",
-    "React",
-    "Next.js",
-    "Terraform",
-    "Ansible",
-    "Docker",
-    "Github Actions",
-    "PostgreSQL",
-    "Linux",
-    "Python",
-    "Spring Boot",
-    "Cypress",
-    "TypeScript",
+    {
+      Icon: ScaleIcon,
+      name: "Sécurité - Governance, Risk, and Compliance",
+      description:
+        "EBIOS, ISO 27001 (initiation), gestion et analyse de risques, politiques de sécurité, conformité, sensibilisation",
+      href: "/skills/security-grc",
+      cta: "En savoir plus",
+      background: <></>
+        // <Image
+        //   src="/red-background.jpeg"
+        //   alt="red-background"
+        //   width={1200}
+        //   height={900}
+        //   className="absolute h-full w-full object-cover"
+        // />
+      ,
+      className: "col-span-5 lg:col-span-3",
+    },
+    {
+      Icon: WrenchIcon,
+      name: "DevOps & Infrastructure",
+      description:
+        "Ansible, Terraform, Bash, Python, GitHub Actions, Docker, Instatus",
+      href: "/skills/devops",
+      cta: "En savoir plus",
+      background: <></>,
+      className: "col-span-5 lg:col-span-2",
+    },
+    {
+      Icon: CloudIcon,
+      name: "Cloud & AWS",
+      description:
+        "WAF, EC2, S3, SES, IAM, Amplify, CloudWatch, Route 53, AWS Budgets",
+      href: "/skills/cloud",
+      cta: "En savoir plus",
+      background: <></>,
+      className: "col-span-5 lg:col-span-2",
+    },
+    {
+      Icon: ShieldIcon,
+      name: "Sécurité - Blue Team",
+      description:
+        "IAM, Casdoor, MFA, Firewall, analyse de logs, sauvegardes automatisées, classification des données",
+      href: "/skills/security-blue",
+      cta: "En savoir plus",
+      background: <></>,
+      className: "col-span-5 lg:col-span-3",
+    },
+    {
+      Icon: ServerIcon,
+      name: "Systèmes & Réseaux",
+      description: "SSH, VNC, Linux, systemd, Postfix, Dovecot, Nginx, DNS, SSH",
+      href: "/skills/sysnet",
+      cta: "En savoir plus",
+      background: <></>,
+      className: "col-span-5 lg:col-span-3",
+    },
+    {
+      Icon: LaptopIcon,
+      name: "Support IT",
+      description: "Dépannage, gestion de parc, support niveau 1/2",
+      href: "/skills/it-support",
+      cta: "En savoir plus",
+      background: <></>,
+      className: "col-span-5 lg:col-span-2",
+    },
+    {
+      Icon: GlobeIcon,
+      name: "Web & CMS",
+      description: "React, Next.js, TypeScript, Node.js, CMS",
+      more: "Wordpress, Webflow, Wix",
+      href: "/skills/web",
+      cta: "En savoir plus",
+      background: <></>,
+      className: "col-span-5 lg:col-span-2",
+    },
+    {
+      Icon: DatabaseIcon,
+      name: "Backend & DB",
+      description: "Spring Boot, PostgreSQL, Supabase, Java, SQLite, Neon",
+      href: "/skills/backend",
+      cta: "En savoir plus",
+      background: <></>,
+      className: "col-span-5 lg:col-span-3",
+    },
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Accueil" },
@@ -144,13 +228,13 @@ export const DATA = {
   ],
   hackathons: [
     {
-      title: "Organizer - HEI Qualification interne pour Hackathon Inter-Universitaire",
+      title:
+        "Organizer - HEI Qualification interne pour Hackathon Inter-Universitaire",
       dates: "Avril 2025",
       location: "Ivandry, Madagascar",
       description:
         "Developed a mobile application which delivered bedtime stories to children using augmented reality.",
-      image:
-        "/hei.png",
+      image: "/hei.png",
       mlh: "https://s3.amazonaws.com/logged-assets/trust-badge/2019/mlh-trust-badge-2019-white.svg",
       links: [],
     },

@@ -1,10 +1,9 @@
 import { HackathonCard } from "@/components/hackathon-card";
+import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
-import { ProjectCard } from "@/components/project-card";
 import { ResumeCard } from "@/components/resume-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
 import { DATA } from "@/data/resume";
 import Link from "next/link";
 import Markdown from "react-markdown";
@@ -20,9 +19,9 @@ export default function Page() {
             <div className="flex-col flex flex-1 space-y-1.5">
               <BlurFadeText
                 delay={BLUR_FADE_DELAY}
-                className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
+                className="text-3xl font-bold tracking-tighter sm:text-4xl xl:text-4xl/none"
                 yOffset={8}
-                text={`Hi, j'suis ${DATA.name.split(" ")[0]} 👋`}
+                text={`👋 Hi, j'suis ${DATA.name}`}
               />
               <BlurFadeText
                 className="max-w-[600px] md:text-xl"
@@ -50,18 +49,17 @@ export default function Page() {
         </BlurFade>
       </section>
       <section id="skills">
-        <div className="flex min-h-0 flex-col gap-y-3">
-          <BlurFade delay={BLUR_FADE_DELAY * 9}>
-            <h2 className="text-xl font-bold">Compétences</h2>
-          </BlurFade>
-          <div className="flex flex-wrap gap-1">
-            {DATA.skills.map((skill, id) => (
-              <BlurFade key={skill} delay={BLUR_FADE_DELAY * 10 + id * 0.05}>
-                <Badge key={skill}>{skill}</Badge>
-              </BlurFade>
+        <BlurFade delay={BLUR_FADE_DELAY * 9}>
+          <h2 className="text-xl font-bold mb-2">Compétences</h2>
+        </BlurFade>
+        <BlurFade delay={BLUR_FADE_DELAY * 3}>
+          {" "}
+          <BentoGrid>
+            {DATA.skills.map((skill) => (
+              <BentoCard key={skill.name} {...skill} />
             ))}
-          </div>
-        </div>
+          </BentoGrid>
+        </BlurFade>
       </section>
       <section id="work">
         <div className="flex min-h-0 flex-col gap-y-3">
@@ -120,7 +118,7 @@ export default function Page() {
                   Hackathons
                 </div>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                  J&apos;aime concevoir des choses
+                  J&apos;aime faire des side-projects
                 </h2>
               </div>
             </div>
@@ -157,9 +155,10 @@ export default function Page() {
                 Entrer en contact
               </h2>
               <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Vous voulez discuter ? Envoyez-moi un message direct {" "}
+                Vous voulez discuter ? Envoyez-moi un message direct{" "}
                 <Link
-                  href={DATA.contact.social.email.url}
+                  href={DATA.contact.social.LinkedIn.url}
+                  target="_blank"
                   className="text-blue-500 hover:underline"
                 >
                   sur Linkedin
@@ -170,8 +169,8 @@ export default function Page() {
                   className="text-blue-500 hover:underline"
                 >
                   un mail
-                </Link>{" "}
-                , je check assez souvent
+                </Link>
+                , je regarde souvent
               </p>
             </div>
           </BlurFade>
